@@ -1,5 +1,12 @@
 package edu.mum.cs.cs525.labs.skeleton;
 
+import edu.mum.cs.cs525.labs.skeleton.repo.AccountEntry;
+import edu.mum.cs.cs525.labs.skeleton.repo.Customer;
+import edu.mum.cs.cs525.labs.skeleton.services.AccountService;
+import edu.mum.cs.cs525.labs.skeleton.services.AccountServiceImpl;
+import edu.mum.cs.cs525.labs.skeleton.strategy.CheckingAccount;
+import edu.mum.cs.cs525.labs.skeleton.strategy.SavingAccount;
+
 public class Application {
 
 	public static void main(String[] args) {

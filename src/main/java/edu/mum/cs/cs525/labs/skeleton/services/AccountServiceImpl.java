@@ -1,7 +1,12 @@
-package edu.mum.cs.cs525.labs.skeleton;
+package edu.mum.cs.cs525.labs.skeleton.services;
+
+import edu.mum.cs.cs525.labs.skeleton.Account;
+import edu.mum.cs.cs525.labs.skeleton.strategy.AccountType;
+import edu.mum.cs.cs525.labs.skeleton.repo.Customer;
+import edu.mum.cs.cs525.labs.skeleton.repo.AccountDAO;
+import edu.mum.cs.cs525.labs.skeleton.repo.AccountDAOImpl;
 
 import java.util.Collection;
-import java.util.List;
 
 public class AccountServiceImpl implements AccountService {
 	private AccountDAO accountDAO;
@@ -16,7 +21,6 @@ public class AccountServiceImpl implements AccountService {
 		account.setCustomer(customer);
 		account.setAccountType(accountType);
 		accountDAO.saveAccount(account);
-		
 		return account;
 	}
 

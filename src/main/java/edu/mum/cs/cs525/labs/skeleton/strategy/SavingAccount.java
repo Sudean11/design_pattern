@@ -1,4 +1,4 @@
-package edu.mum.cs.cs525.labs.skeleton;
+package edu.mum.cs.cs525.labs.skeleton.strategy;
 
 public class SavingAccount  implements AccountType{
 
