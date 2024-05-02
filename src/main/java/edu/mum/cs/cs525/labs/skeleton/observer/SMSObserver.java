@@ -5,7 +5,7 @@ import edu.mum.cs.cs525.labs.skeleton.utils.EnumNotifyType;
 public class SMSObserver implements  Observer{
     private SMSObserver(){}
 
-    public static SMSObserver instance;
+    private static SMSObserver instance;
 
     public static SMSObserver getSmsObserver(){
         if(instance == null){
