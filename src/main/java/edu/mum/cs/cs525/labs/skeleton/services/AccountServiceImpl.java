@@ -31,26 +31,21 @@ public class AccountServiceImpl implements AccountService, Observable {
 	}
 
 	private void setupAndRegisterObservers() {
-		Observer emailObserver = EmailObserver.getEmailObserver();
-		Observer smsObserver = SMSObserver.getSmsObserver();
-		Observer logObserver = LogObserver.getLogObserver();
-		this.registerObserver(emailObserver);
-		this.registerObserver(smsObserver);
-		this.registerObserver(logObserver);
+		this.registerObserver(EmailObserver.getEmailObserver());
+		this.registerObserver(SMSObserver.getSmsObserver());
+		this.registerObserver(LogObserver.getLogObserver());
 	}
 
 	public void deposit(String accountNumber, double amount) {
 		Account account = accountDAO.loadAccount(accountNumber);
 		account.deposit(amount);
-		notifyObservers(EnumNotifyType.DEPOSITED, "Deposited account: "+accountNumber);
-
 		accountDAO.updateAccount(account);
+		notifyObservers(EnumNotifyType.DEPOSITED, "Deposited account: "+accountNumber);
 	}
 
 	public Account getAccount(String accountNumber) {
 		Account account = accountDAO.loadAccount(accountNumber);
 		notifyObservers(EnumNotifyType.FETCHED, "Fetched account: "+accountNumber);
-
 		return account;
 	}
 
@@ -69,8 +64,8 @@ public class AccountServiceImpl implements AccountService, Observable {
 	public void withdraw(String accountNumber, double amount) {
 		Account account = accountDAO.loadAccount(accountNumber);
 		account.withdraw(amount);
-		notifyObservers(EnumNotifyType.WITHDRAW, "Amount withdrawn from "+ accountNumber);
 		accountDAO.updateAccount(account);
+		notifyObservers(EnumNotifyType.WITHDRAW, "Amount withdrawn from "+ accountNumber);
 	}
 
 
@@ -79,10 +74,10 @@ public class AccountServiceImpl implements AccountService, Observable {
 		Account fromAccount = accountDAO.loadAccount(fromAccountNumber);
 		Account toAccount = accountDAO.loadAccount(toAccountNumber);
 		fromAccount.transferFunds(toAccount, amount, description);
-		notifyObservers(EnumNotifyType.TRANSFER_FUNDS, "Amount withdrawn from "+ fromAccountNumber);
-
 		accountDAO.updateAccount(fromAccount);
 		accountDAO.updateAccount(toAccount);
+		notifyObservers(EnumNotifyType.TRANSFER_FUNDS, "Amount withdrawn from "+ fromAccountNumber);
+
 	}
 	private List<Observer> observers = new ArrayList<>();
 

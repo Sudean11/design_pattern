@@ -6,7 +6,7 @@ public class EmailObserver implements  Observer{
 
     private EmailObserver(){}
 
-    public static EmailObserver instance;
+    private static EmailObserver instance;
 
     public static EmailObserver getEmailObserver(){
         if(instance == null){
