@@ -2,7 +2,7 @@ package edu.mum.cs.cs525.labs.skeleton.services;
 
 import edu.mum.cs.cs525.labs.skeleton.Account;
 import edu.mum.cs.cs525.labs.skeleton.observer.*;
-import edu.mum.cs.cs525.labs.skeleton.strategy.AccountType;
+import edu.mum.cs.cs525.labs.skeleton.strategy.AccountInterestStrategy;
 import edu.mum.cs.cs525.labs.skeleton.repo.Customer;
 import edu.mum.cs.cs525.labs.skeleton.repo.AccountDAO;
 import edu.mum.cs.cs525.labs.skeleton.repo.AccountDAOImpl;
@@ -20,7 +20,7 @@ public class AccountServiceImpl implements AccountService, Observable {
 		setupAndRegisterObservers();
 	}
 
-	public Account createAccount(String accountNumber, String customerName, AccountType accountType) {
+	public Account createAccount(String accountNumber, String customerName, AccountInterestStrategy accountType) {
 		Account account = new Account(accountNumber);
 		Customer customer = new Customer(customerName);
 		account.setCustomer(customer);

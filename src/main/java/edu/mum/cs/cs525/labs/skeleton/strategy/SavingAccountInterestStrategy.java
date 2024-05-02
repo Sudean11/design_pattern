@@ -1,6 +1,6 @@
 package edu.mum.cs.cs525.labs.skeleton.strategy;
 
-public class SavingAccount  implements AccountType{
+public class SavingAccountInterestStrategy implements AccountInterestStrategy {
 
     @Override
     public double calcInterest(double balance) {

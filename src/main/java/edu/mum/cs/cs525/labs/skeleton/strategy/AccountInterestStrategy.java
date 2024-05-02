@@ -1,5 +1,5 @@
 package edu.mum.cs.cs525.labs.skeleton.strategy;
 
-public interface AccountType {
+public interface AccountInterestStrategy {
     double calcInterest(double balance);
 }

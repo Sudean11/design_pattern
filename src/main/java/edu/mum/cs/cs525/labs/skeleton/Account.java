@@ -1,10 +1,8 @@
 package edu.mum.cs.cs525.labs.skeleton;
 
-import edu.mum.cs.cs525.labs.skeleton.observer.*;
 import edu.mum.cs.cs525.labs.skeleton.repo.AccountEntry;
 import edu.mum.cs.cs525.labs.skeleton.repo.Customer;
-import edu.mum.cs.cs525.labs.skeleton.strategy.AccountType;
-import edu.mum.cs.cs525.labs.skeleton.utils.EnumNotifyType;
+import edu.mum.cs.cs525.labs.skeleton.strategy.AccountInterestStrategy;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,7 +11,7 @@ import java.util.List;
 public class Account {
 	private Customer customer;
 
-	private AccountType accountType;
+	private AccountInterestStrategy accountType;
 
 	private String accountNumber;
 
@@ -22,7 +20,7 @@ public class Account {
 		return accountType.calcInterest(balance);
 	}
 
-	public void setAccountType(AccountType accountType) {
+	public void setAccountType(AccountInterestStrategy accountType) {
 		this.accountType = accountType;
 	}
 
