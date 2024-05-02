@@ -3,10 +3,12 @@ package edu.mum.cs.cs525.labs.skeleton.utils;
 public enum EnumNotifyType {
     CREATED,
     UPDATED,
-    DELETED, FETCHED,
+    DELETED,
+    FETCHED,
     DEPOSITED,
     WITHDRAW,
     NEW_ENTRY,
     TRANSFER_FUNDS,
-    FETCH_CUSTOMER
+    FETCH_CUSTOMER,
+    OTHERS
 }
