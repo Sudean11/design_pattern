@@ -9,7 +9,6 @@ public class P3 extends InterestPromotionDecorator{
     }
     @Override
     public double calcInterest(double balance) {
-        System.out.println("P3: "+interestStrategy.calcInterest(balance)+" "+balance);
         return interestStrategy.calcInterest(balance)+balance*0.03;
     }
 }
