@@ -6,5 +6,5 @@ public abstract class AccountFactory {
     public AccountDAO getAccount(){
         return createAccount();
     }
-    abstract  AccountDAO createAccount();
+    protected abstract  AccountDAO createAccount();
 }

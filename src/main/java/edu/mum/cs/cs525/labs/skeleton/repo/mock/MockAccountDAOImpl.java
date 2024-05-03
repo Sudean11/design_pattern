@@ -1,11 +1,12 @@
-package edu.mum.cs.cs525.labs.skeleton.repo;
+package edu.mum.cs.cs525.labs.skeleton.repo.mock;
 
 import edu.mum.cs.cs525.labs.skeleton.Account;
+import edu.mum.cs.cs525.labs.skeleton.repo.AccountDAO;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class MockAccountDAOImpl implements  AccountDAO{
+public class MockAccountDAOImpl implements AccountDAO {
     Collection<Account> accountlist = new ArrayList<Account>();
 
     public void saveAccount(Account account) {
