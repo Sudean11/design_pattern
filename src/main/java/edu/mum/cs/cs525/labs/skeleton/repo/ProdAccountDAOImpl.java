@@ -5,7 +5,7 @@ import edu.mum.cs.cs525.labs.skeleton.Account;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class AccountDAOImpl implements AccountDAO {
+public class ProdAccountDAOImpl implements AccountDAO {
 	Collection<Account> accountlist = new ArrayList<Account>();
 
 	public void saveAccount(Account account) {

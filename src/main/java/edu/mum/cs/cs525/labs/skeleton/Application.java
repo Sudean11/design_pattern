@@ -5,6 +5,8 @@ import edu.mum.cs.cs525.labs.skeleton.Decorator.P2;
 import edu.mum.cs.cs525.labs.skeleton.Decorator.P3;
 import edu.mum.cs.cs525.labs.skeleton.repo.AccountEntry;
 import edu.mum.cs.cs525.labs.skeleton.repo.Customer;
+import edu.mum.cs.cs525.labs.skeleton.repo.MockAccountFactory;
+import edu.mum.cs.cs525.labs.skeleton.repo.ProdAccountFactory;
 import edu.mum.cs.cs525.labs.skeleton.services.AccountService;
 import edu.mum.cs.cs525.labs.skeleton.services.AccountServiceImpl;
 import edu.mum.cs.cs525.labs.skeleton.strategy.AccountInterestStrategy;
@@ -15,7 +17,7 @@ public class Application {
 
 	public static void main(String[] args) {
 
-		AccountService accountService = new AccountServiceImpl();
+		AccountService accountService = new AccountServiceImpl(new MockAccountFactory());
 
 		AccountInterestStrategy strategy = new SavingAccountInterestStrategy();
 		strategy = new P1(strategy);

@@ -2,10 +2,8 @@ package edu.mum.cs.cs525.labs.skeleton.services;
 
 import edu.mum.cs.cs525.labs.skeleton.Account;
 import edu.mum.cs.cs525.labs.skeleton.observer.*;
+import edu.mum.cs.cs525.labs.skeleton.repo.*;
 import edu.mum.cs.cs525.labs.skeleton.strategy.AccountInterestStrategy;
-import edu.mum.cs.cs525.labs.skeleton.repo.Customer;
-import edu.mum.cs.cs525.labs.skeleton.repo.AccountDAO;
-import edu.mum.cs.cs525.labs.skeleton.repo.AccountDAOImpl;
 import edu.mum.cs.cs525.labs.skeleton.utils.EnumNotifyType;
 
 import java.util.ArrayList;
@@ -14,9 +12,9 @@ import java.util.List;
 
 public class AccountServiceImpl implements AccountService, Observable {
 	private AccountDAO accountDAO;
-	
-	public AccountServiceImpl(){
-		accountDAO = new AccountDAOImpl();
+
+	public AccountServiceImpl(AccountFactory accountFactory){
+		accountDAO = accountFactory.getAccount();
 		setupAndRegisterObservers();
 	}
 
